@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+                               "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+<form-beans>
+<form-bean name="RegFormBean" type="Beans.EmpRegFormBean"></form-bean>
+</form-beans>
+<action-mappings>
+<action path="/regis" name="RegFormBean" type="controller.EmpRegControllerLookup" parameter="submit">
+<forward name="success" path="/success.jsp"></forward>
+<forward name="failure" path="/failure.jsp"></forward>
+<forward name="deleted" path="/deleted.jsp"></forward>
+<forward name="founded" path="/foundedlist.jsp"></forward>
+<forward name="notdeleted" path="/notdeleted.jsp"></forward>
+</action>
+
+
+<action path="/changelang" type="controller.changelanguagecontroller">
+<forward name="langchanged" path="/RegForm.jsp"></forward>
+</action>
+</action-mappings>
+<message-resources parameter="resources/EmpRegForm"></message-resources>
+</struts-config>                    
